@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es2022",     // The JS syntax version that TS will compile to
+    "esModuleInterop": true,    // Allow to import modules that has "require" import
+    "allowJs": true,                // Allow JS Code to be used
+    "noUncheckedIndexedAccess": true,    // Add "undefined" to any undeclare fields or props
+    "strict": true // enables a wide range of type checking behavior that results in stronger guarantees of program correctness
+  }
+}
