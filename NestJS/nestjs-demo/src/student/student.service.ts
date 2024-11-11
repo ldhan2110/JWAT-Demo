@@ -1,4 +1,4 @@
-import { HttpStatus, Injectable } from '@nestjs/common';
+import { HttpStatus, Injectable, Scope } from '@nestjs/common';
 import { ApplicationException } from 'src/common/filter/application.exception';
 import { Student } from './entities/student.entity';
 import { CreateStudentDto } from './dto/createStudent.dto';

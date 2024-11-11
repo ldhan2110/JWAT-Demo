@@ -8,6 +8,7 @@ import {
   Param,
   ParseIntPipe,
   Post,
+  Scope,
   UseFilters,
   UsePipes,
   ValidationPipe,
@@ -19,7 +20,7 @@ import { ValidateStudentIdPipe } from 'src/common/pipes/validateStudentId.pipe';
 import { CreateStudentDto } from './dto/createStudent.dto';
 
 @UseFilters(new ApplicationExceptionFilter())
-@Controller('student')
+@Controller({ path: 'student', scope: Scope.REQUEST })
 export class StudentController {
   constructor(
     private readonly studentService: StudentService,
