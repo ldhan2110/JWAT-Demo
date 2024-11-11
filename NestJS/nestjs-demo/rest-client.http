@@ -1,0 +1,24 @@
+###
+GET http://localhost:3000/student
+
+###
+GET http://localhost:3000/student/mockService
+
+###
+GET http://localhost:3000/student/STU-0001
+
+###
+GET http://localhost:3000/student/index/2
+
+###
+POST http://localhost:3000/student/create
+Content-Type: application/json
+
+{
+    "name": "Rugal Omega",
+    "id": "STU-008",
+    "classId": "CLS-001"
+}
+
+###
+GET http://localhost:3000/student
