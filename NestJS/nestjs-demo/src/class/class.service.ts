@@ -1,10 +1,15 @@
-import { HttpStatus, Injectable } from '@nestjs/common';
+import { HttpStatus, Inject, Injectable } from '@nestjs/common';
 import { CreateClassDto } from './dto/create-class.dto';
 import { Class } from './entities/class.entity';
-import { ApplicationException } from 'src/common/filter/application.exception';
+import { ApplicationException } from '@src/common/filter/application.exception';
 
 @Injectable()
 export class ClassService {
+  constructor(
+    @Inject('ANOTHER_MOCK_SERVICE')
+    private readonly anotherMockService,
+  ) {}
+
   private classList: Class[] = [
     {
       id: 'CLS-001',
@@ -23,6 +28,10 @@ export class ClassService {
 
   findClassByClassId(classId: string) {
     return this.classList.find((item) => item.id == classId);
+  }
+
+  getAllClass() {
+    return this.anotherMockService.getAllClass();
   }
 
   getAll() {

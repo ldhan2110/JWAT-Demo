@@ -4,7 +4,7 @@ import {
   ArgumentMetadata,
   HttpStatus,
 } from '@nestjs/common';
-import { ApplicationException } from 'src/common/filter/application.exception';
+import { ApplicationException } from '@src/common/filter/application.exception';
 
 @Injectable()
 export class ValidateStudentIdPipe implements PipeTransform {

@@ -2,7 +2,7 @@ import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { StudentService } from './student.service';
 import { StudentController } from './student.controller';
 import { StudentMiddleware } from './student.middleware';
-import { ClassModule } from 'src/class/class.module';
+import { ClassModule } from '@src/class/class.module';
 
 const mockService = {
   runMockService() {

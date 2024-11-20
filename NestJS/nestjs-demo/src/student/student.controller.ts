@@ -1,6 +1,5 @@
 import {
   Body,
-  Controller,
   Delete,
   Get,
   HttpStatus,
@@ -8,19 +7,18 @@ import {
   Param,
   ParseIntPipe,
   Post,
-  Scope,
   UseFilters,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
 import { StudentService } from './student.service';
-import { ApplicationExceptionFilter } from 'src/common/filter/exception.filter';
-import { ApplicationException } from 'src/common/filter/application.exception';
-import { ValidateStudentIdPipe } from 'src/common/pipes/validateStudentId.pipe';
+import { ApplicationExceptionFilter } from '@src/common/filter/exception.filter';
+import { ApplicationException } from '@src/common/filter/application.exception';
+import { ValidateStudentIdPipe } from '@src/common/pipes/validateStudentId.pipe';
 import { CreateStudentDto } from './dto/createStudent.dto';
 
 @UseFilters(new ApplicationExceptionFilter())
-@Controller({ path: 'student', scope: Scope.REQUEST })
+//@Controller({ path: 'student', scope: Scope.REQUEST })
 export class StudentController {
   constructor(
     private readonly studentService: StudentService,
