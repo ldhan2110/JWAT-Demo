@@ -1,4 +1,6 @@
+
 import Link from "next/link";
+import { Button } from "@modules/common/components/Button";
 
 export type Todo = {
     userId: number;
@@ -18,7 +20,7 @@ export default function TodoListPage ({data}: TodoListPageProps) {
                 {values.map(item => {
                     return (
                         <Link key={item.id} href={`/todo/${item.id}`}>
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 mt-15xl text-michaeljackson">
                                 <span>Title: {item.title}</span>
                                 <input type="checkbox" checked={item.completed}/>
                             </div>
@@ -33,6 +35,7 @@ export default function TodoListPage ({data}: TodoListPageProps) {
         <ul>
             <li>
                 {handleRenderTodo(data)}
+                <Button/>
             </li>
         </ul>
     )
@@ -40,11 +43,12 @@ export default function TodoListPage ({data}: TodoListPageProps) {
 
 export async function getServerSideProps() {
     // Fetch data from external API
-    const res = await fetch('https://jsonplaceholder.typicode.com/todos')
+    const res = 
+    await fetch('https://jsonplaceholder.typicode.com/todos')
     const data = await res.json()
-   
+    console.log(process.env.NODE_ENV)
     // Pass data to the page via props
-    return { props: { data } }
+    return { props: { data }}
 }
 
 TodoListPage.getLayout = function getLayout(page: React.ReactElement) {

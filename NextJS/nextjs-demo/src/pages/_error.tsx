@@ -1,4 +1,4 @@
-function Error({ statusCode }) {
+function Error({ statusCode }: {statusCode: number}) {
     return (
       <p>
         {statusCode
@@ -8,8 +8,9 @@ function Error({ statusCode }) {
     )
   }
    
-  Error.getInitialProps = ({ res, err }) => {
+  Error.getInitialProps = ({ res, err }: {res: {statusCode: number}, err: {statusCode: number} }) => {
     const statusCode = res ? res.statusCode : err ? err.statusCode : 404
+    console.log(res, err);
     return { statusCode }
   }
    

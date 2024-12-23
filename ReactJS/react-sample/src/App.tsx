@@ -4,6 +4,7 @@ import './App.css'
 import { BasicReduxDemo } from './demo/redux/BasicReduxDemo'
 import { Provider } from 'react-redux'
 import { store } from './demo/redux/redux-toolkit/store'
+import { BasicZustandDemo } from './demo/zustand/basic/BasicZustandDemo'
 
 function App() {
   return (
@@ -30,12 +31,12 @@ function App() {
       {/* <Demo10 /> */}
 
       {/* Zustand Demo */}
-      {/* <BasicZustandDemo /> */}
+      <BasicZustandDemo />
 
       {/* Redux Toolkit Demo */}
-      <Provider store={store}>
+      {/* <Provider store={store}>
         <BasicReduxDemo />
-      </Provider>
+      </Provider> */}
     </>
   )
 }
