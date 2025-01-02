@@ -1,5 +1,5 @@
-import { ReactTable } from "@/modules/table/ReactTable";
+import { TanStackTable } from "@/modules/table/TanstackTable";
 
 export default function DemoPage (){
-    return <ReactTable/>
+    return <TanStackTable/>
 }

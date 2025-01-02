@@ -1,6 +1,8 @@
 
 import Link from "next/link";
 import { Button } from "@modules/common/components/Button";
+import { client } from "@/modules/graphql";
+import { gql } from "@apollo/client";
 
 export type Todo = {
     userId: number;
@@ -13,7 +15,21 @@ type TodoListPageProps = {
     data: Todo[];
 }
 
+const GET_STUDENT = gql`
+    query Students {
+        students {
+            id
+            isActive
+            studentName
+        }
+    }
+    `;
+
 export default function TodoListPage ({data}: TodoListPageProps) {
+    client.query({query: GET_STUDENT}).then(result => console.log(result));
+
+
+
     function handleRenderTodo  (values: Todo[]){
         return (
             <>
